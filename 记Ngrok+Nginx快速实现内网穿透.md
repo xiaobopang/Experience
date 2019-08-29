@@ -99,11 +99,8 @@
 
 13、systemctl status ngrok.service 可查看当前服务状态：
 
-![解析域名](./1.png)
-
-14、
-
 ```
+![查看服务状态](./2.png)
 
 ## Nginx配置如下
 
