@@ -102,10 +102,10 @@
 ```
 ![查看服务状态](./2.png)
 
-## Nginx配置如下
-
 ```
 
+14、Nginx 配置如下：
+  
    server {
          listen 80;
          server_name *.ngrok.test.com ngrok.test.com;
@@ -129,6 +129,20 @@
          proxy_busy_buffers_size 256k;
          proxy_temp_file_write_size 256k;
         }
-}
+      }
+
+15、启动客户端程序
+   为了方便测试，我在桌面创建了一个名叫ngrok的文件夹，把刚才生成的客户端下载到这个文件夹下，
+   然后创建一个名为ngrok.cfg的配置文件,内容如下：
+   
+   server_addr: "ngrok.test.com:4443"  
+   trust_host_root_certs: false
+
+15、然后就可以启动我们的客户端程序了
+
+   ./ngrok -config=ngrok.cfg -log=ngrok.log -subdomain=test 8082
+
+解释：-log 为日志文件，-subdomain为域名前缀， 8082为本地服务端口号
 
 ```
+
